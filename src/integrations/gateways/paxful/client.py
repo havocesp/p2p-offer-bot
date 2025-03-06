@@ -56,7 +56,7 @@ class PaxfulAuthAPIClient(object):
                 params=params,
                 data=payload,
                 headers=self._get_request_headers(),
-            )
+            timeout=60)
 
             if response.status_code not in self.VALID_STATUS_CODES:
                 msg = "Invalid API client response (status_code={}, data={})".format(
@@ -176,7 +176,7 @@ class PaxfulApiClient(object):
                 params=params,
                 data=payload,
                 headers=self._get_request_headers(),
-            )
+            timeout=60)
 
             if response.status_code not in self.VALID_STATUS_CODES:
                 msg = "Invalid API client response (status_code={}, data={})".format(
